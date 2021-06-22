@@ -1,0 +1,43 @@
+﻿@model LocadoraDeFilmesPF.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="text-left text-light">
+    <h1 text-ligth>Detalhes</h1>
+
+    <div>
+        <h4 text-ligth>Funcionario</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2 text-ligth">
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.salario)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.salario)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.admissao)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.admissao)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.nascimento)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.nascimento)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.id">Editar</a> |
+        <a asp-action="Index">Voltar para lista</a>
+    </div>
+    </div>

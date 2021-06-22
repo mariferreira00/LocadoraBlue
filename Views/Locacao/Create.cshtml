@@ -1,0 +1,31 @@
+﻿@model Locacao
+    <div class="text-left text-light">
+        <h4>Nova Locação</h4>
+
+        <div class="row text-light">
+
+            <div class="col-md-4 text-light">
+                <form asp-action="Create">
+                    <div class="form-group">
+                        <label asp-for="FilmeId" class="control-label"></label>
+                        <select asp-for="FilmeId" class="form-control" asp-items="@ViewBag.listaDeFilmes">
+                            <option value="">-- Selecione um Filme --</option>
+                        </select>
+                        <span asp-validation-for="FilmeId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" asp-for="datalocação"></label>
+                        <input asp-for="datalocação" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" asp-for="dataDevolucao">Data da devolução</label>
+                        <input asp-for="dataDevolucao" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add nova locação" class="btn btn-success" />
+                        <a asp-action="Index" class="btn btn-primary">Voltar!</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

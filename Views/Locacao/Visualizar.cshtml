@@ -1,0 +1,18 @@
+﻿@model Locacao
+
+@{
+    ViewData["Title"] = "Assistir Locação"; //view para assistir o filme locado
+}
+<div class="text-light"
+<h4>Assistindo : @Model.Filme.nome </h4>
+<hr />
+<div>
+    <iframe width="560" height="315" src="@Model.Filme.link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+
+
+<a asp-action="Index">Voltar</a>
+    </div>
+

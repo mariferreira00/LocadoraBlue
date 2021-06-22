@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@model List<Filme>
+
+@{
+    ViewData["Title"] = "Home Page";
+    
+}
+
+<div class="text-center text-light">
+    <h1>Lista de Filmes</h1>
+    <table class="table text-light">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(Model => Model.First().id)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().nome)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().lancamento)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().duracao)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Filme f in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => f.id)</td>
+                    <td>@Html.DisplayFor(modelItem => f.nome)</td>
+                    <td>@Html.DisplayFor(modelItem => f.lancamento)</td>
+                    <td>@Html.DisplayFor(modelItem => f.duracao)</td>
+                    <td>
+                        <a asp-action="Visualizar" asp-route-id="@f.id">Visualizar</a>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <a asp-action="Atualizar" asp-route-id="@f.id">Atualizar</a>
+                            <a asp-action="Deletar" asp-route-id="@f.id">Deletar</a>
+                        }
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @if (SignInManager.IsSignedIn(User))
+    {
+    <div>
+        <a asp-action="Create" class="btn btn-info">Adicionar novo filme</a>
+    </div>
+    }
+</div>
+    

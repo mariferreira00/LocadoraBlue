@@ -1,0 +1,56 @@
+﻿@model IEnumerable<LocadoraDeFilmesPF.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="text-left text-light">
+    <h1 text-ligth>Funcionários</h1>
+
+    <p>
+        <a text-ligth asp-action="Create">Cadastrar novo funcionário</a>
+    </p>
+    <table class="table text-white">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.salario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.admissao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nascimento)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.salario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.admissao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nascimento)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.id">Detalhes</a> |
+                        <a asp-action="Delete" asp-route-id="@item.id">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

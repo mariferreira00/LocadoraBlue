@@ -1,0 +1,30 @@
+﻿@model Filme
+
+@{
+    ViewData["Title"] = "Visualizar Filme";
+}
+<div class="text-light">
+    <h4>Visualizando o filme @Model.nome </h4>
+    <hr />
+
+    <dl class="row text-light">
+        <dt class="col-sm-3">@Html.DisplayNameFor(ModelItem => Model.nome)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(ModelItem => Model.nome)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(ModelItem => Model.sinopse)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(ModelItem => Model.sinopse)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(ModelItem => Model.preco)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(ModelItem => Model.preco)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(ModelItem => Model.lancamento)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(ModelItem => Model.lancamento)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(ModelItem => Model.duracao)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(ModelItem => Model.duracao)</dd>
+    </dl>
+    </div>
+
+
+
+    <a asp-action="Index">Voltar</a>

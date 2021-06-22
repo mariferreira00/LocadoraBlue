@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Sorte do Dia !!!";
+    Random rdn = new();
+    int r = rdn.Next(1, 40);
+}
+
+<div class="text-light text-center">
+    <h1 class="display-4">Sorte do dia</h1>
+    <br />
+    <h2>Descontos exclusivos para você assistir sempre mais! Aqui está o seu desconto :</h2>
+    <br />
+    <h1>@r % </h1>
+
+    @if (r >= 20)
+    {
+        <h5>Hoje você está com sorte!</h5>
+    }
+
+    <h3>"Aproveite já o seu benefício e escolha seu filme"</h3>
+    <a asp-area="" asp-controller="Locacao" asp-action="Create" class="btn btn-success">Clique aqui</a>
+
+</div>
+
+    

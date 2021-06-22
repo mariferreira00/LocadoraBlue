@@ -1,0 +1,38 @@
+﻿@model List<Locacao>
+
+@{
+    ViewData["Title"] = "Locações";
+}
+
+<div class="text-center text-light">
+    <h1>Lista de locações</h1>
+    <table class="table text-light">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(Model => Model.First().FilmeId)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().datalocação)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().dataDevolucao)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().Filme.nome)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var f in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => f.FilmeId)</td>
+                    <td>@Html.DisplayFor(modelItem => f.datalocação)</td>
+                    <td>@Html.DisplayFor(modelItem => f.dataDevolucao)</td>
+                    <td>@Html.DisplayFor(modelItem => f.Filme.nome)</td>
+                    <td>
+                        <a asp-action="Visualizar" asp-route-id="@f.id">Assistir</a>
+                        <a asp-action="Deletar" asp-route-id="@f.id">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-action="Create" class="btn btn-info">Alugar novo filme!</a>
+    </div>
+</div>
